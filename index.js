@@ -1,13 +1,13 @@
 const calendar = document.getElementById("calendar");
 const monthYear = document.getElementById("monthYear");
 
-/* MODAL */
+
 const modal = document.getElementById("modal");
 const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");
 const cancelModal = document.getElementById("cancelModal");
 
-/* FORM */
+
 const form = document.getElementById("appointmentForm");
 const patient = document.getElementById("patient");
 const doctor = document.getElementById("doctor");
@@ -16,12 +16,11 @@ const specialty = document.getElementById("specialty");
 const dateInput = document.getElementById("date");
 const timeInput = document.getElementById("time");
 
-/* NAVIGATION */
 const prevMonth = document.getElementById("prevMonth");
 const nextMonth = document.getElementById("nextMonth");
 const todayBtn = document.getElementById("todayBtn");
 
-/* MONTH DROPDOWN */
+
 const monthBtn = document.getElementById("monthBtn");
 const monthList = document.getElementById("monthList");
 
@@ -29,7 +28,7 @@ let currentDate = new Date();
 let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
 let editIndex = null;
 
-/* ================= MODAL ================= */
+
 openModal.onclick = () => {
   modal.style.display = "flex";
 };
@@ -39,13 +38,7 @@ closeModal.onclick = cancelModal.onclick = () => {
   form.reset();
   editIndex = null;
 };
-// closeModal.onclick = () => {
-//   modal.style.display = "none";
-//   form.reset();
-//   editIndex = null;
-// };
 
-/* ================= CALENDAR ================= */
 function renderCalendar() {
   calendar.innerHTML = "";
 
@@ -59,7 +52,7 @@ function renderCalendar() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const daysInPrevMonth = new Date(year, month, 0).getDate();
 
-  const totalCells = 35; // ✅ 5 rows × 7 columns
+  const totalCells = 35; 
 
   for (let i = 0; i < totalCells; i++) {
     const box = document.createElement("div");
@@ -69,7 +62,7 @@ function renderCalendar() {
     let displayMonth = month;
     let displayYear = year;
 
-    /* PREVIOUS MONTH */
+ 
     if (i < firstDay) {
       displayDate = daysInPrevMonth - firstDay + i + 1;
       displayMonth = month - 1;
@@ -82,12 +75,11 @@ function renderCalendar() {
       box.classList.add("other-month");
     }
 
-    /* CURRENT MONTH */
     else if (i < firstDay + daysInMonth) {
       displayDate = i - firstDay + 1;
     }
 
-    /* NEXT MONTH */
+   
     else {
       displayDate = i - (firstDay + daysInMonth) + 1;
       displayMonth = month + 1;
@@ -102,7 +94,7 @@ function renderCalendar() {
 
     box.innerHTML = `<strong>${displayDate}</strong>`;
 
-    /* APPOINTMENTS */
+  
     appointments.forEach((a, index) => {
       const ad = new Date(a.date);
 
@@ -137,7 +129,7 @@ function renderCalendar() {
   }
 }
 
-/* ================= FORM SUBMIT ================= */
+
 form.onsubmit = e => {
   e.preventDefault();
 
@@ -163,7 +155,7 @@ form.onsubmit = e => {
   renderCalendar();
 };
 
-/* ================= EDIT ================= */
+
 function editAppointment(index) {
   const a = appointments[index];
 
@@ -178,7 +170,7 @@ function editAppointment(index) {
   modal.style.display = "flex";
 }
 
-/* ================= DELETE ================= */
+
 function deleteAppointment(index) {
   if (confirm("Delete this appointment?")) {
     appointments.splice(index, 1);
@@ -187,7 +179,7 @@ function deleteAppointment(index) {
   }
 }
 
-/* ================= NAVIGATION ================= */
+
 prevMonth.onclick = () => {
   currentDate.setMonth(currentDate.getMonth() - 1);
   renderCalendar();
@@ -203,7 +195,6 @@ todayBtn.onclick = () => {
   renderCalendar();
 };
 
-/* ================= MONTH DROPDOWN ================= */
 monthBtn.onclick = () => {
   monthList.style.display =
     monthList.style.display === "block" ? "none" : "block";
@@ -224,12 +215,8 @@ document.addEventListener("click", e => {
   }
 });
 
-/* ================= INIT ================= */
+
 renderCalendar();
-
-
-
-
 
 document.querySelectorAll(".custom-select").forEach(select => {
   const targetId = select.dataset.target;
@@ -238,7 +225,7 @@ document.querySelectorAll(".custom-select").forEach(select => {
   select.querySelectorAll("li").forEach(li => {
     li.onclick = () => {
       select.querySelector(".selected-text").textContent = li.textContent;
-      hiddenInput.value = li.textContent; // 🔥 ORIGINAL ID VALUE SET
+      hiddenInput.value = li.textContent; 
       select.querySelector(".options").style.display = "none";
     };
   });

@@ -45,13 +45,13 @@ header button {
 }
 
 
-/* LAYOUT */
+
  .layout {
   display: flex;
    height: calc(100vh - 60px); 
 } 
 
-/* SIDEBAR */
+
 aside {
   width: 220px;
   background: #ffffff;
@@ -61,9 +61,9 @@ aside {
 
 aside a {
   display: flex;
- align-items: center;     /* vertical center */
+ align-items: center;    
 
-  gap: 8px;                /* space between icon & text */
+  gap: 8px;               
   padding: 10px 12px;
   text-decoration: none;
   color: #374151;
@@ -79,13 +79,12 @@ aside a:hover {
   font-weight: 600;
 }
 
-/* MAIN */
+
 main {
   flex: 1;
   padding: 20px;
 }
 
-/* CALENDAR HEADER */
 .calendar-header {
   display: flex;
   align-items: center;
@@ -103,21 +102,36 @@ main {
 }
 
 #monthYear {
+
+   display: flex;  
   font-weight: 200;
   font-size: 14px;
   background-color: white;
    border: 1px solid #d1d5db;
   border-radius: 6px;
-  padding: 4px;
+  padding: 8px 10px;
+  align-items: center;
+    cursor: pointer;
+  justify-content: center;
 }
+#monthYear svg {
+  display: block;            
+  width: 16px;
+  height: 16px;
+}
+#monthYear svg path {
+  fill: #2E2E2E;
+}
+
+
 .username{
   text-align: center;
-  color: #1d4ed8;
- border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
+  color: #2C7BE5;
+ border-top: 2px solid #2E2E2E40;
+  border-bottom: 2px solid #2E2E2E40;
   padding: 8px 0;
 }
-/* WEEKDAYS */
+
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -132,7 +146,7 @@ main {
   font-size: 13px;
 }
 
-/* CALENDAR GRID */
+
 #calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -192,7 +206,7 @@ main {
   border-radius: 3px;
   margin: 2px 0;
 }
-/* ===== MODAL OVERLAY ===== */
+
 .modal {
   position: fixed;
   inset: 0;
@@ -203,7 +217,6 @@ main {
   z-index: 1000;
 }
 
-/* ===== MODAL CARD ===== */
 .modal-card {
   width: 500px;
   background: #ffffff;
@@ -218,8 +231,8 @@ main {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 10px;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 16px;
+  /* border-bottom: 1px solid #e5e7eb; */
+  /* margin-bottom: 6px; */
 }
 
 .modal-header h3 {
@@ -227,14 +240,16 @@ main {
   font-weight: 600;
   color: #2e2e2e;
 }
-
+.scheduleMar{
+  margin: 0px;
+}
 .close-btn {
   font-size: 20px;
   cursor: pointer;
   color: #6b7280;
 }
 
-/* ===== FORM GRID ===== */
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -242,7 +257,7 @@ main {
   row-gap: 16px;
 }
 
-/* ===== INPUT GROUP (ICON + INPUT INSIDE BOX) ===== */
+
 .input-group {
   display: flex;
   align-items: center;
@@ -254,13 +269,13 @@ main {
   background: #fff;
 }
 
-/* ICON */
+
 .input-group svg {
   flex-shrink: 0;
    
 }
 
-/* ===== INPUT GROUP (ICON OUTSIDE INPUT) ===== */
+
 .input-group {
   display: flex;
   align-items: center;
@@ -291,7 +306,7 @@ padding: 0 10px;
   outline: none;
   background: #fff;
 }
-/* INPUT BOX */
+
 .input-group input {
   width: 100%;
   height: 38px;
@@ -304,12 +319,11 @@ padding: 0 10px;
   background: #fff;
 }
 
-/* PLACEHOLDER */
+
 .input-group input::placeholder {
   color: #9ca3af;
 }
 
-/* FOCUS EFFECT */
 .input-group input:focus {
   border-color: #2563eb;
 }
@@ -325,24 +339,24 @@ input[type="time"] {
   color: #2e2e2e;
 }
 
-/* Hide default ugly icon (Chrome) */
+
 input[type="time"]::-webkit-calendar-picker-indicator {
   opacity: 0;
   cursor: pointer;
 }
 
-/* Focus */
+
 input[type="time"]:focus {
   border-color: #2563eb;
 }
 
-/* ===== REASON FIELD ===== */
+
 .reason-group {
-  grid-column: span 2; /* full width in grid */
+  grid-column: span 2; 
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 .reason-group label {
@@ -369,17 +383,20 @@ input[type="time"]:focus {
 
 .reason-group textarea:focus {
   border-color: #2563eb;
+    border-bottom: 1px solid #2E2E2E40; 
+    margin-bottom: 6px; 
 }
 
-/* ===== FOOTER ===== */
+
 .modal-footer {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
   margin-top: 18px;
+
 }
 
-/* BUTTONS */
+
 .btn-outline {
   padding: 6px 16px;
   font-size: 14px;
@@ -401,7 +418,6 @@ input[type="time"]:focus {
 }
 
 
-/* ANIMATION */
 @keyframes fadeIn {
   from {
     transform: scale(0.95);
@@ -413,7 +429,6 @@ input[type="time"]:focus {
   }
 }
 
-/* TABLE */
  table {
   width: 100%;
   border-collapse: collapse;
@@ -490,13 +505,13 @@ td button {
 
 @media (max-width: 1024px) {
   aside {
-    width: 80px; /* Shrink sidebar to icons only */
+    width: 80px; 
     padding: 10px;
   }
 
   aside a {
     justify-content: center;
-    font-size: 0; /* Hide text, show icons */
+    font-size: 0; 
   }
 
   aside a img {
@@ -504,10 +519,10 @@ td button {
   }
 }
 
-/* ----- Large Mobile & Small Tablets (under 768px) ----- */
+
 @media (max-width: 768px) {
   .layout {
-    flex-direction: column; /* Stack sidebar on top of main */
+    flex-direction: column; 
     height: auto;
   }
 
@@ -522,8 +537,7 @@ td button {
 
   aside a {
     margin-bottom: 0;
-    font-size: 14px; /* Show text again for horizontal bar */
-  }
+    font-size: 14px; 
 
   .calendar-header {
     justify-content: space-between;
@@ -531,7 +545,7 @@ td button {
   }
 
   .weekdays span {
-    font-size: 10px; /* Smaller text for headers */
+    font-size: 10px; 
     padding: 5px;
   }
 
@@ -540,15 +554,12 @@ td button {
   }
 
   .modal-card {
-    width: 90%; /* Modal takes most of the screen */
+    width: 90%; 
     padding: 15px;
   }
 }
+}
 
-
-/* ============================= */
-/* LARGE DESKTOP (≥ 1440px) */
-/* ============================= */
 @media (min-width: 1440px) {
   main {
     padding: 24px 32px;
@@ -562,9 +573,7 @@ td button {
     min-height: 130px;
   }
 }
-/* ============================= */
-/* DESKTOP & LAPTOP (1024px – 1439px) */
-/* ============================= */
+
 @media (max-width: 1439px) and (min-width: 1024px) {
   aside {
     width: 200px;
@@ -574,9 +583,7 @@ td button {
     min-height: 110px;
   }
 }
-/* ============================= */
-/* LARGE MOBILE (481px – 767px) */
-/* ============================= */
+
 @media (max-width: 767px) {
   .layout {
     flex-direction: column;
@@ -628,7 +635,7 @@ td button {
 
 
 @media (max-width: 480px) {
-  /* Header adjustments */
+ 
   header {
     padding: 0 12px;
   }
@@ -636,7 +643,7 @@ td button {
     font-size: 16px;
   }
 
-  /* Calendar header */
+
   .calendar-header {
     flex-wrap: wrap;
     gap: 6px;
@@ -652,34 +659,31 @@ td button {
     padding: 4px 8px;
   }
 
-  /* Username */
+
   .username {
     font-size: 13px;
     margin: 6px 0;
     text-align: center;
   }
 
-  /* Weekdays */
   .weekdays span {
     font-size: 10px;
     padding: 4px 0;
   }
 
-  /* Calendar grid */
   #calendar {
-    display: grid; /* keep as grid */
+    display: grid; 
     grid-template-columns: repeat(7, 1fr);
     gap: 4px;
   }
 
   #calendar .day {
-    min-height: 120px; /* responsive height */
+    min-height: 120px; 
     padding: 4px;
     font-size: 11px;
-    overflow-wrap: break-word; /* prevent overflow */
+    overflow-wrap: break-word;
   }
 
-  /* Modal */
   .modal-card {
     width: 95%;
     height: auto;
@@ -691,7 +695,7 @@ td button {
     font-size: 14px;
   }
   .form-grid {
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr; 
   }
   .modal-footer {
     flex-direction: column;
@@ -703,10 +707,10 @@ td button {
   }
 }
 
-/* ================= MOBILE (max-width: 480px) ================= */
+
 @media (max-width: 320px) {
 
-  /* ----- HEADER ----- */
+  
   header {
     padding: 0 12px;
     height: 56px;
@@ -727,7 +731,7 @@ header {
     font-size: 16px;
   }
 
-  /* Calendar header */
+  
   .calendar-header {
     flex-wrap: wrap;
     gap: 6px;
@@ -743,14 +747,14 @@ header {
     padding: 4px 8px;
   }
 
-  /* Username */
+ 
   .username {
     font-size: 13px;
     margin: 6px 0;
     text-align: center;
   }
 
-  /* Weekdays */
+
   .weekdays span {
     font-size: 10px;
     padding: 4px 0;
@@ -770,7 +774,6 @@ header {
     overflow-wrap: break-word; 
   }
 
-  /* Modal */
   .modal-card {
     width: 95%;
     height: auto;

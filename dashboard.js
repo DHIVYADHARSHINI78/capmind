@@ -10,26 +10,30 @@ const openModal = document.getElementById("openModal");
 const cancelModal = document.getElementById("cancelModal");
 const form = document.getElementById("appointmentForm");
 const updateBtn = document.querySelector(".btn-update");
-
+const closeModal = document.getElementById("closeModal");
 let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
 let editIndex = null;
 
-// Open modal for new appointment
+
 openModal.addEventListener("click", () => {
   modal.style.display = "flex";
   form.reset();
   editIndex = null;
 });
 
-// Close modal
 cancelModal.addEventListener("click", () => {
   modal.style.display = "none";
   form.reset();
 });
 
+closeModal.onclick = closeModal.onclick = () => {
+  modal.style.display = "none";
+  form.reset();
+  editIndex = null;
+};
 modal.addEventListener("click", e => { if(e.target === modal) modal.style.display = "none"; });
 
-// Save appointment (Add/Edit)
+
 form.addEventListener("submit", e => {
   e.preventDefault();
   const data = {
@@ -67,12 +71,12 @@ function displayAppointments(list){
     const index = appointments.indexOf(a);
     tableBody.innerHTML += `
       <tr>
-        <td>${a.patient}</td>
-        <td>${a.doctor}</td>
+        <td  style="color:#2C7BE5;">${a.patient}</td>
+        <td style="color:#2C7BE5;">${a.doctor}</td>
         <td>${a.hospital}</td>
         <td>${a.specialty}</td>
         <td>${a.date}</td>
-        <td>${a.time}</td>
+        <td style="color:#2C7BE5;">${a.time}</td>
         <td>
           <button class="btn-edit" data-index="${index}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.25 16.25H18.75V17.5H1.25V16.25ZM15.875 5.625C16.375 5.125 16.375 4.375 15.875 3.875L13.625 1.625C13.125 1.125 12.375 1.125 11.875 1.625L2.5 11V15H6.5L15.875 5.625ZM12.75 2.5L15 4.75L13.125 6.625L10.875 4.375L12.75 2.5ZM3.75 13.75V11.5L10 5.25L12.25 7.5L6 13.75H3.75Z" fill="#2C7BE5"/>

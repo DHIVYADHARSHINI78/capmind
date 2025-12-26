@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f4f7;
+}
+
+/* ================= HEADER ================= */
+header {
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+header button {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background: #2563eb; color: #fff; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer;
+}
+/* ================= LAYOUT ================= */
+.layout {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* ================= SIDEBAR ================= */
+aside {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+aside a {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #374151;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+aside a.active,
+aside a:hover {
+  background: #e0e7ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* ================= MAIN ================= */
+main {
+  flex: 1;
+  padding: 24px;
+}
+.prac{
+  background-color: white;
+  padding: 20px;
+    border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+/* ================= DASHBOARD CARD ================= */
+.dashboard-card {
+  
+  padding: 16px;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+/* ================= FILTER ROW ================= */
+.filter-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filter-row input {
+  height: 34px;
+  padding: 6px 10px;
+  /* border: 1px solid #d1d5db; */
+  /* border-radius: 4px; */
+  font-size: 13px;
+  width: 160px;
+}
+
+.filter-row button {
+  height: 34px;
+  padding: 0 16px;
+  border: none;
+  /* border-radius: 4px; */
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+thead {
+  background: #f9fafb;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 12px;
+  font-size: 13px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Blue link style like Figma */
+td a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+tbody tr:hover {
+  background: #f3f4f6;
+}
+
+/* ================= ACTION ICONS ================= */
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+.action-btn.edit {
+  color: #2563eb;
+}
+
+.action-btn.delete {
+  color: #ef4444;
+}
+ /* ===== FILTER ROW ===== */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  /* background: #ffffff; */
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== SEARCH INPUT WRAPPER ===== */
+.input-wrapper {
+  position: relative;
+  width: 180px;
+}
+
+/* INPUT */
+.input-wrapper input {
+  width: 100%;
+  height: 36px;
+  padding-left: 34px;   /* space for icon */
+  padding-right: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #2e2e2e;
+}
+
+
+ .input-wrapper input::placeholder {
+   color: #9ca3af; 
+}
+
+/* ICON INSIDE INPUT */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* FOCUS */
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* ===== DATE INPUT ===== */
+.date-input {
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== UPDATE BUTTON ===== */
+.btn-update {
+  height: 36px;
+  padding: 0 16px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background: #1d4ed8;
+} 
+      
+.appoint{
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid white;
+ 
+}
+.appoint1{
+margin-left: 6px;
+}
+
+
+/* ================= MOBILE (max-width: 480px) ================= */
+@media (max-width: 480px) {
+
+  /* ----- HEADER ----- */
+  header {
+    padding: 0 12px;
+    height: 56px;
+  }
+
+  header h2 {
+    font-size: 16px;
+  }
+
+  header button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  /* ----- LAYOUT ----- */
+  aside {
+    display: none; /* hide sidebar on mobile */
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  /* ----- DASHBOARD CARD ----- */
+  .dashboard-card {
+    padding: 12px;
+  }
+
+  .dashboard-title {
+    font-size: 15px;
+  }
+
+  /* ----- FILTER ROW ----- */
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .input-wrapper,
+  .date-input,
+  .btn-update {
+    width: 100%;
+  }
+
+  /* ----- MODAL ----- */
+  .modal-card {
+    width: 96%;
+    padding: 12px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr !important; /* single column */
+    gap: 10px;
+  }
+
+  .input-group {
+    flex-direction: column !important;
+    align-items: stretch;
+    width: 90%;
+  }
+
+  .reason-group {
+    grid-column: span 1;
+    width: 90%;
+  }
+
+  .input-group input,
+  .input-group select,
+  .reason-group textarea {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-footer .btn-primary,
+  .modal-footer .btn-outline {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* ----- TABLE ----- */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  /* ----- ACTION ICONS ----- */
+  .action-btn {
+    font-size: 14px;
+  }
+}
